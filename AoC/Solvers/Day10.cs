@@ -11,6 +11,8 @@ namespace AoC.Solvers
         private List<KeyValuePair<int, int>> Trailheads = [];
         private List<KeyValuePair<int, int>> Directions = [];
 
+        private int Part2Solution = 0;
+
         public void Setup(List<string> data)
         {
             Directions = [
@@ -43,7 +45,7 @@ namespace AoC.Solvers
             foreach (var trailhead in Trailheads)
             {
                 var solved = new bool[XSize, YSize];
-                AdvanceTrail(trailhead.Key, trailhead.Value, solved);
+                Part2Solution += AdvanceTrail(trailhead.Key, trailhead.Value, solved);
 
                 for(int x = 0; x < XSize; x++)
                     for (int y = 0; y < YSize; y++)
@@ -57,14 +59,7 @@ namespace AoC.Solvers
 
         public string SolvePart2()
         {
-            int score = 0;
-            foreach (var trailhead in Trailheads)
-            {
-                var solved = new bool[XSize, YSize];
-                score += AdvanceTrail(trailhead.Key, trailhead.Value, solved);
-            }
-
-            return score.ToString();
+            return Part2Solution.ToString();
         }
 
         private int AdvanceTrail(int x, int y, bool[,] solved)

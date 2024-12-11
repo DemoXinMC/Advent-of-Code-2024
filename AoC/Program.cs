@@ -12,6 +12,8 @@ namespace AoC
         static void Main(string[] args)
         {
             // AddOldSolvers();
+            
+
             RunSetup();
             RunPart1();
             RunPart2();

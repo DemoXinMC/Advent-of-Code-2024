@@ -36,7 +36,7 @@ namespace AoC
 
             for (int i = 0; i < iterations; i++)
             {
-                if (iterations % iterUpdates == 0)
+                if (i % iterUpdates == 0)
                 {
                     totalTime.Stop();
                     UpdateConsole(i);

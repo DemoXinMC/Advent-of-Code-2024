@@ -12,15 +12,17 @@ namespace AoC
         static void Main(string[] args)
         {
             // AddOldSolvers();
-            
+            AddSolver(new Day11(), "input/day11.txt");
 
             RunSetup();
             RunPart1();
             RunPart2();
-
-            Benchmark.Run(typeof(Day10), "input/day10.txt", 20000, 1000);
-
             RunOutput();
+
+            Console.WriteLine();
+
+            Benchmark.Run(typeof(Day11), "input/day11.txt", 3000, 100);
+
             Console.Write("Press any key to exit...");
             Console.ReadKey();
         }
